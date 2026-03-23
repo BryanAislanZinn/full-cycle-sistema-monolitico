@@ -62,4 +62,9 @@ export default class Address implements ValueObject {
       throw new Error("Zip code is required")
     }
   }
+
+  toString(): string {
+    return `${this._street}, ${this._number} - ${this._complement}, ${this._city} - ${this._state}, ${this._zipCode}`
+  }
+
 }
