@@ -1,9 +1,9 @@
-import  Id  from "../../@shared/domain/value-object/id.value-object";
+import { Id } from "../../@shared/domain/value-object/id.value-object";
 import { Address } from "../domain/address.value-object";
 import { Invoice } from "../domain/invoice";
 import { Product } from "../domain/product";
-import  InvoiceGateway  from "../gateway/invoice.gateway";
-import  InvoiceModel  from "./invoice.model";
+import { InvoiceGateway } from "../gateway/invoice.gateway";
+import { InvoiceModel } from "./invoice.model";
 
 function invoiceModelToInvoice(invoiceModel: InvoiceModel): Invoice {
   return new Invoice({

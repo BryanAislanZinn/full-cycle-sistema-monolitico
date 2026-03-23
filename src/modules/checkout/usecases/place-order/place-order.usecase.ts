@@ -1,10 +1,10 @@
-import  Id  from "../../../@shared/domain/value-object/id.value-object";
-import  UseCaseInterface  from "../../../@shared/usecase/use-case.interface";
-import  ClientAdmFacadeInterface  from "../../../client-adm/facade/client-adm.facade.interface";
+import { Id } from "../../../@shared/domain/value-object/id.value-object";
+import { UseCaseInterface } from "../../../@shared/usecase/usecase.interface";
+import { ClientAdmFacadeInterface } from "../../../client-adm/facade/client-adm.facade.interface";
 import { InvoiceFacadeInterface } from "../../../invoice/facade/invoice.facade.interface";
-import  PaymentFacadeInterface  from "../../../payment/facade/facade.interface";
-import  ProductAdmFacadeInterface  from "../../../product-adm/facade/product-adm.facade.interface";
-import  StoreCatalogFacadeInterface  from "../../../store-catalog/facade/store-catalog.facade.interface";
+import { PaymentFacadeInterface } from "../../../payment/facade/facade.interface";
+import { ProductAdmFacadeInterface } from "../../../product-adm/facade/product-adm.facade.interface";
+import { StoreCatalogFacadeInterface } from "../../../store-catalog/facade/store-catalog.facade.interface";
 import { Client } from "../../domain/client.entity";
 import { Order } from "../../domain/order.entity";
 import { Product } from "../../domain/product.entity";
@@ -52,7 +52,7 @@ export class PlaceOrderUseCase implements UseCaseInterface {
       id: new Id(client.id),
       name: client.name,
       email: client.email,
-      address: client.address.street
+      address: client.address,
     });
 
     const order = new Order({
@@ -68,12 +68,12 @@ export class PlaceOrderUseCase implements UseCaseInterface {
     const invoice =
       payment.status === "approved"
         ? await this._invoiceFacade.generateInvoice({
-            city: client.address._city,
-            zipCode: client.address._zipCode,
-            street: client.address._street,
-            state: client.address.state,
-            complement: client.address.complement,
-            number: client.address.number,
+            city: client.address,
+            zipCode: client.address,
+            street: client.address,
+            state: client.address,
+            complement: client.address,
+            number: client.address,
             name: client.name,
             document: client.document,
             items: products.map((p) => ({

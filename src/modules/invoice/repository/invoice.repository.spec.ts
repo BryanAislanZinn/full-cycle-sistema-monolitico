@@ -1,11 +1,11 @@
 import { Sequelize } from "sequelize-typescript";
 
-import  Id  from "../../@shared/domain/value-object/id.value-object";
+import { Id } from "../../@shared/domain/value-object/id.value-object";
 import { Address } from "../domain/address.value-object";
 import { Invoice } from "../domain/invoice";
 import { Product } from "../domain/product";
 
-import  InvoiceModel  from "./invoice.model";
+import { InvoiceModel } from "./invoice.model";
 import { InvoiceRepository } from "./invoice.repository";
 
 describe("InvoiceRepository test", () => {

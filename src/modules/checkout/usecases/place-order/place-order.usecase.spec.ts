@@ -1,4 +1,4 @@
-import  Id from "../../../@shared/domain/value-object/id.value-object";
+import { Id } from "../../../@shared/domain/value-object/id.value-object";
 import { Product } from "../../domain/product.entity";
 import { PlaceOrderInputDto } from "./place-order.dto";
 import { PlaceOrderUseCase } from "./place-order.usecase";
@@ -309,7 +309,7 @@ describe("PlaceOrderUseCase unit test", () => {
           amount: output.total,
         });
         expect(mockInvoiceFacade.generateInvoice).toHaveBeenCalledTimes(1);
-      /**   expect(mockInvoiceFacade.generateInvoice).toHaveBeenCalledWith({
+        expect(mockInvoiceFacade.generateInvoice).toHaveBeenCalledWith({
           name: clientProps.name,
           document: clientProps.document,
           city: clientProps.address,
@@ -330,7 +330,7 @@ describe("PlaceOrderUseCase unit test", () => {
               price: products["2"].salesPrice,
             },
           ],
-        }); **/
+        });
       });
     });
   });

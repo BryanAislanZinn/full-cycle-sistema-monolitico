@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
 
-import  Id from "../../@shared/domain/value-object/id.value-object";
+import { Id } from "../../@shared/domain/value-object/id.value-object";
 import { Order } from "../domain/order.entity";
 import { Client } from "../domain/client.entity";
 import { Product } from "../domain/product.entity";

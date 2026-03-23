@@ -3,7 +3,7 @@ import { InvoiceRepository } from "../repository/invoice.repository";
 import { FindInvoiceUseCase } from "../usecases/find-invoice/find-invoice.usecase";
 import { GenerateInvoiceUseCase } from "../usecases/generate-invoice/generate-invoice.usecase";
 
-export default class InvoiceFacadeFactory {
+export class InvoiceFacadeFactory {
   static create(): InvoiceFacade {
     const repository = new InvoiceRepository();
     const findInvoiceUseCase = new FindInvoiceUseCase(repository);
